@@ -36,14 +36,14 @@ class RosIO(Node):
         super().__init__('minimal_subscriber')
         self.image_subscription = self.create_subscription(
             Image,
-            '/deit/sub/image_raw',
+            '/deit/image_raw',
             self.listener_callback,
             10
         )
 
         self.result_publisher = self.create_publisher(
             String,
-            '/deit/pub/result',
+            '/deit/result',
             1
         )
 
