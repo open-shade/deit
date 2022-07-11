@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'deit_ros2'
+package_name = 'deit'
 
 setup(
     name=package_name,
@@ -31,7 +31,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'deit_ros2 = deit_ros2.deit_ros2:main'
+            'deit = deit.deit:main'
         ],
     },
 )
