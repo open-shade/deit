@@ -29,7 +29,7 @@ COPY . ./src/deit
 
 RUN pip3 install ./src/deit && \
     : "Install the model" && \
-    python3 -c "from transformers import AutoFeatureExtractor; AutoFeatureExtractor.from_pretrained('${MODEL_NAME}')" && \
+    python3 -c "from transformers import AutoFeatureExtractor, ViTForImageClassification; AutoFeatureExtractor.from_pretrained('${MODEL_NAME}'); ViTForImageClassification('${MODEL_NAME}')" && \
     colcon build
 
 ENTRYPOINT ["/home/shade/shade_ws/start.sh"]
