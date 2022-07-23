@@ -1,6 +1,6 @@
 import numpy
 import os
-from transformers import AutoFeatureExtractor, ViTForImageClassification
+from transformers import AutoFeatureExtractor, DeiTForImageClassification
 import torch
 from PIL import Image as PilImage
 import rclpy
@@ -17,7 +17,7 @@ if not ALGO_VERSION:
 
 def predict(image: Image):
     feature_extractor = AutoFeatureExtractor.from_pretrained(ALGO_VERSION)
-    model = ViTForImageClassification.from_pretrained(ALGO_VERSION)
+    model = DeiTForImageClassification.from_pretrained(ALGO_VERSION)
     # Enter line here
 
     inputs = feature_extractor(image, return_tensors="pt")
